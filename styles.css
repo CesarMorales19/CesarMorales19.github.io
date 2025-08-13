@@ -7,16 +7,16 @@ body {
 }
 
 #matrixCanvas {
-  position: fixed;
+  position: fixed; /* Se queda pegado al fondo */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -1; /* Siempre al fondo */
 }
 
 .overlay {
-  position: relative;
+  position: relative; /* Para que esté por encima del canvas */
   z-index: 1;
 }
 
@@ -33,7 +33,7 @@ header {
   backdrop-filter: blur(8px);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10; /* Encima del fondo */
 }
 
 header .container {
@@ -119,7 +119,7 @@ header nav a:hover {
   text-decoration: underline;
 }
 
-
+/* Footer */
 footer {
   text-align: center;
   padding: 15px;

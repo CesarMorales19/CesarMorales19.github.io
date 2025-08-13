@@ -2,72 +2,94 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>César Morales - Portafolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portafolio | César Morales</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <!-- Fondo Matrix -->
-  <canvas id="matrixCanvas"></canvas>
+  <canvas id="matrix"></canvas>
 
-  <!-- Contenido -->
-  <div class="overlay">
-    <header>
-      <div class="container">
-        <h1>Cesar Morales</h1>
-        <nav>
-          <a href="#proyectos">Proyectos</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
+  <!-- Contenido principal -->
+  <header>
+    <h1>César Morales</h1>
+    <p>Desarrollador Web & Móvil</p>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <img src="Pp.png" alt="Foto de César Morales" class="foto-perfil">
+      <h2>Bienvenido a mi portafolio</h2>
+      <p>
+        Especializado en aplicaciones web, móviles y gestión de bases de datos.
+      </p>
+    </div>
+  </section>
+
+  <section class="proyectos">
+    <h2>Mis Proyectos</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Nutripet</h3>
+        <p>Página sobre venta de dispensadores de comida para mascotas con conexión a pasarela de pagos.</p>
       </div>
-    </header>
-
-    <section class="hero">
-      <div class="container">
-        <h2>Desarrollador Web & Móvil</h2>
-        <p>Especializado en aplicaciones web, móviles y gestión de bases de datos.</p>
+      <div class="card">
+        <h3>Gestión BD</h3>
+        <p>Base de datos con triggers y procesos almacenados.</p>
       </div>
-    </section>
-
-    <section id="proyectos" class="proyectos">
-      <div class="container">
-        <h2>Mis Proyectos</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>Nutripet</h3>
-            <p>Página de venta de dispensadores de comida para mascotas domésticas con conexión a pasarela de pagos.</p>
-          </div>
-          <div class="card">
-            <h3>Gestión de Base de Datos</h3>
-            <p>Proyecto con triggers y procesos almacenados para optimizar la administración de información.</p>
-          </div>
-          <div class="card">
-            <h3>Xanitec</h3>
-            <p>Sistema web para almacenes y gestión de productos médicos, con base de datos en SQL Server.</p>
-          </div>
-          <div class="card">
-            <h3>App Papelería</h3>
-            <p>Aplicación móvil desarrollada en Expo para gestión de productos y ventas en una papelería.</p>
-          </div>
-        </div>
+      <div class="card">
+        <h3>Xanitec</h3>
+        <p>Almacén para manejo y gestión de productos médicos con conexión a SQL Server.</p>
       </div>
-    </section>
-
-    <section id="contacto" class="contacto">
-      <div class="container">
-        <h2>Contacto</h2>
-        <p>Email: <a href="mailto:cesarmoralescsr@gmail.com">cesarmoralescsr@gmail.com</a></p>
-        <p>WhatsApp: <a href="https://wa.me/525653381766" target="_blank">+52 565 338 1766</a></p>
+      <div class="card">
+        <h3>App Papelería</h3>
+        <p>Aplicación móvil desarrollada en Expo para gestión de ventas en una papelería.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      <p>© 2025 César Morales - Todos los derechos reservados</p>
-    </footer>
-  </div>
+  <footer>
+    <p>📧 cesarmoralescsr@gmail.com | 📱 +52 5653381766</p>
+  </footer>
 
-  <script src="matrix.js"></script>
+  <!-- Script efecto Matrix -->
+  <script>
+    const canvas = document.getElementById("matrix");
+    const ctx = canvas.getContext("2d");
+
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    const letters = "アァカサタナハマヤャラワガザダバパ0123456789".split("");
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#0F0";
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    setInterval(draw, 33);
+
+    window.addEventListener("resize", () => {
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+    });
+  </script>
 </body>
 </html>

@@ -8,69 +8,66 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  
-  <!-- HEADER -->
-  <header>
-    <div class="container">
-      <h1>César Morales</h1>
-      <nav>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-    </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <h2>Desarrollador Web & Móvil</h2>
-      <p>Especializado en aplicaciones web, móviles y gestión de bases de datos.</p>
-    </div>
-  </section>
+  <!-- Fondo Matrix -->
+  <canvas id="matrixCanvas"></canvas>
 
-  <!-- PROYECTOS -->
-  <section id="proyectos" class="proyectos">
-    <div class="container">
-      <h2>Mis Proyectos</h2>
-      <div class="grid">
-
-        <div class="card">
-          <h3>Nutripet</h3>
-          <p>Página de venta de dispensadores de comida para mascotas domésticas con conexión a pasarela de pagos.</p>
-        </div>
-
-        <div class="card">
-          <h3>Gestión de Base de Datos</h3>
-          <p>Proyecto con triggers y procesos almacenados para optimizar la administración de información.</p>
-        </div>
-
-        <div class="card">
-          <h3>Xanitec</h3>
-          <p>Sistema web para almacenes y gestión de productos médicos, con base de datos en SQL Server.</p>
-        </div>
-
-        <div class="card">
-          <h3>App Papelería</h3>
-          <p>Aplicación móvil desarrollada en Expo para gestión de productos y ventas en una papelería.</p>
-        </div>
-
+  <!-- Contenido -->
+  <div class="overlay">
+    <header>
+      <div class="container">
+        <h1>César Morales</h1>
+        <nav>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- CONTACTO -->
-  <section id="contacto" class="contacto">
-    <div class="container">
-      <h2>Contacto</h2>
-      <p>Email: <a href="mailto:cesarmoralescsr@gmail.com">cesarmoralescsr@gmail.com</a></p>
-      <p>WhatsApp: <a href="https://wa.me/525653381766" target="_blank">+52 565 338 1766</a></p>
-    </div>
-  </section>
+    <section class="hero">
+      <div class="container">
+        <h2>Desarrollador Web & Móvil</h2>
+        <p>Especializado en aplicaciones web, móviles y gestión de bases de datos.</p>
+      </div>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 César Morales - Todos los derechos reservados</p>
-  </footer>
+    <section id="proyectos" class="proyectos">
+      <div class="container">
+        <h2>Mis Proyectos</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Nutripet</h3>
+            <p>Página de venta de dispensadores de comida para mascotas domésticas con conexión a pasarela de pagos.</p>
+          </div>
+          <div class="card">
+            <h3>Gestión de Base de Datos</h3>
+            <p>Proyecto con triggers y procesos almacenados para optimizar la administración de información.</p>
+          </div>
+          <div class="card">
+            <h3>Xanitec</h3>
+            <p>Sistema web para almacenes y gestión de productos médicos, con base de datos en SQL Server.</p>
+          </div>
+          <div class="card">
+            <h3>App Papelería</h3>
+            <p>Aplicación móvil desarrollada en Expo para gestión de productos y ventas en una papelería.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section id="contacto" class="contacto">
+      <div class="container">
+        <h2>Contacto</h2>
+        <p>Email: <a href="mailto:cesarmoralescsr@gmail.com">cesarmoralescsr@gmail.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/525653381766" target="_blank">+52 565 338 1766</a></p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 César Morales - Todos los derechos reservados</p>
+    </footer>
+  </div>
+
+  <script src="matrix.js"></script>
 </body>
 </html>

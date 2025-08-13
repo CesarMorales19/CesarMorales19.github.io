@@ -1,22 +1,23 @@
-const canvas = document.getElementById('matrixCanvas');
-const ctx = canvas.getContext('2d');
+const canvas = document.getElementById("matrixCanvas");
+const ctx = canvas.getContext("2d");
 
-canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-const letters = 'アァイィウヴエェオカガキギクグケゲコゴサザシジスズセゼソゾタダチッヂツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモヤユヨラリルレロワンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-const matrix = letters.split('');
+const letters = "アァカサタナハマヤャラワガザダバパ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const matrix = letters.split("");
 
-const fontSize = 14;
-const columns = canvas.width / fontSize;
-const drops = Array(Math.floor(columns)).fill(1);
+const fontSize = 16;
+const columns = Math.floor(canvas.width / fontSize);
+const drops = Array(columns).fill(1);
 
 function draw() {
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+  // Fondo semitransparente para efecto de rastro
+  ctx.fillStyle = "rgba(0,0,0,0.08)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = 'rgba(0, 255, 70, 0.6)'; 
-  ctx.font = fontSize + 'px monospace';
+  ctx.fillStyle = "rgba(0,255,150,0.6)"; // verde degradado suave
+  ctx.font = fontSize + "px monospace";
 
   for (let i = 0; i < drops.length; i++) {
     const text = matrix[Math.floor(Math.random() * matrix.length)];
@@ -29,9 +30,9 @@ function draw() {
   }
 }
 
-setInterval(draw, 50);
+setInterval(draw, 35);
 
-window.addEventListener('resize', () => {
-  canvas.height = window.innerHeight;
+window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 });

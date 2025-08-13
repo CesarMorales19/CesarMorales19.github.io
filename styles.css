@@ -1,67 +1,138 @@
-/* Fondo canvas Matrix */
-#matrix {
+/* Fondo Matrix */
+#matrixCanvas {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Siempre atrás */
 }
 
-/* Estilos generales */
+/* Overlay para contenido */
+.overlay {
+  position: relative;
+  z-index: 1;
+}
+
+/* General */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: white;
-  text-align: center;
-  background: transparent;
+  background: black;
+  overflow-x: hidden;
 }
 
+/* Header */
 header {
-  padding: 20px 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 15px 0;
 }
 
-.hero {
-  padding: 40px 20px;
-}
-
-.container {
+header .container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
 }
 
+header h1 {
+  color: #38bdf8;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #38bdf8;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: #38bdf8;
+}
+
+.hero p {
+  color: #cbd5e1;
+  max-width: 600px;
+  margin: 10px auto 0;
+}
+
+/* Foto de perfil */
 .foto-perfil {
   width: 180px;
   height: 180px;
   border-radius: 50%;
   border: 4px solid #38bdf8;
   object-fit: cover;
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 20px rgba(56,189,248,0.5);
   margin-bottom: 20px;
 }
 
+/* Proyectos */
 .proyectos {
-  padding: 40px 20px;
+  padding: 60px 20px;
+}
+
+.proyectos h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #38bdf8;
 }
 
 .grid {
   display: grid;
-  gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .card {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.6);
   padding: 20px;
   border-radius: 12px;
-  transition: transform 0.2s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,255,70,0.4);
 }
 
+/* Contacto */
+.contacto {
+  padding: 60px 20px;
+  background: rgba(0,0,0,0.7);
+}
+
+.contacto a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.contacto a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
 footer {
-  margin-top: 40px;
+  text-align: center;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.6);
 }
